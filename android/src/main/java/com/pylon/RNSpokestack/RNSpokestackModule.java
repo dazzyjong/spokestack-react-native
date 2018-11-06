@@ -78,7 +78,7 @@ public class RNSpokestackModule extends ReactContextBaseJavaModule implements On
 
   public void onEvent(SpeechContext.Event event, SpeechContext context) {
     WritableMap react_event = Arguments.createMap();
-    react_event.putString("events", event.name());
+    react_event.putString("event", event.name());
     react_event.putString("transcript", context.getTranscript());
     react_event.putBoolean("isActive", context.isActive());
     sendEvent("onSpeechEvent", react_event);
